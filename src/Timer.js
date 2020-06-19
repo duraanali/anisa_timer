@@ -24,6 +24,9 @@ class Timer extends React.Component {
   handleStopClick() {
     clearInterval(this.interval);
     this.setState({ running: false });
+    this.setState({
+        duration: this.state.duration.concat([this.state.seconds])
+    })
   }
 
   handleRecordClick() {
@@ -45,10 +48,10 @@ class Timer extends React.Component {
           : <Button className="start-btn" onClick={this.handleStartClick.bind(this)}>start</Button>
         )}
 
-        {(running || seconds > 0 
+        {/* {(running || seconds > 0 
           ? <Button onClick={this.handleRecordClick.bind(this)}>Record</Button>
           : null
-        )}
+        )} */}
 
         <ul className="stopwatch-laps">
         <li className="stopwatch-title"><strong>Title</strong> Duration</li>
