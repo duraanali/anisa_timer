@@ -11,6 +11,7 @@ class Timer extends React.Component {
     this.state = {
       running: false,
       seconds: 0,
+      frequency: 0,
       duration: []
     };
     this.interval = null;
@@ -27,6 +28,7 @@ class Timer extends React.Component {
     this.setState({
         duration: this.state.duration.concat([this.state.seconds])
     })
+    this.setState({ seconds: 0 });
   }
 
   handleRecordClick() {
