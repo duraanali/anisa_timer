@@ -26,10 +26,13 @@ class Timer extends React.Component {
     this.setState({ running: false });
   }
 
-  handleLapClick() {
+  handleRecordClick() {
+    clearInterval(this.interval);
+    this.setState({ running: false });
     this.setState({
         duration: this.state.duration.concat([this.state.seconds])
     })
+
   }
 
   render() {
@@ -45,7 +48,7 @@ class Timer extends React.Component {
         )}
 
         {(running || seconds > 0 
-          ? <Button onClick={this.handleLapClick.bind(this)}>Record</Button>
+          ? <Button onClick={this.handleRecordClick.bind(this)}>Record</Button>
           : null
         )}
 
