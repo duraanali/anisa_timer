@@ -42,6 +42,26 @@ body {
   .stopwatch-lap strong::before {
     content: "Record ";
   }
+
+
+  .stopwatch-title {
+    padding: 0 0 0 20px;
+    list-style-type: none;
+  }
+  
+  .stopwatch-title {
+    font-size: 20px;
+    line-height: 60px;
+    padding-right: 20px;
+    text-align: right;
+    border-bottom: 1px solid #d9dae0;
+  }
+  
+  .stopwatch-title strong {
+    float: left;
+    color: #7f8083;
+    font-weight: 100;
+  }
   
   .btn {
     font-family: inherit;

@@ -27,8 +27,6 @@ class Timer extends React.Component {
   }
 
   handleRecordClick() {
-    clearInterval(this.interval);
-    this.setState({ running: false });
     this.setState({
         duration: this.state.duration.concat([this.state.seconds])
     })
@@ -53,6 +51,7 @@ class Timer extends React.Component {
         )}
 
         <ul className="stopwatch-laps">
+        <li className="stopwatch-title"><strong>Title</strong> Duration</li>
           {duration.map((record, i) =>
             <li className="stopwatch-lap"><strong>{i + 1}</strong>/ {formattedSeconds(record)}</li>)
           }
