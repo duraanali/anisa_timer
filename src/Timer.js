@@ -45,7 +45,7 @@ class Timer extends React.Component {
         )}
 
         {(running || seconds > 0 
-          ? <Button onClick={this.handleLapClick.bind(this)}>lap</Button>
+          ? <Button onClick={this.handleLapClick.bind(this)}>Duration</Button>
           : null
         )}
 
