@@ -40,7 +40,7 @@ body {
   }
   
   .stopwatch-lap strong::before {
-    content: "Lap ";
+    content: "Record ";
   }
   
   .btn {
@@ -49,8 +49,8 @@ body {
   
     display: inline-block;
   
-    width: 72px;
-    height: 72px;
+    width: 100px;
+    height: 100px;
     margin: 24px;
     padding: 0;
   

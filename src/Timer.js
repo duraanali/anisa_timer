@@ -11,7 +11,7 @@ class Timer extends React.Component {
     this.state = {
       running: false,
       seconds: 0,
-      laps: []
+      duration: []
     };
     this.interval = null;
   }
@@ -28,12 +28,12 @@ class Timer extends React.Component {
 
   handleLapClick() {
     this.setState({
-      laps: this.state.laps.concat([this.state.seconds])
+        duration: this.state.duration.concat([this.state.seconds])
     })
   }
 
   render() {
-    const {running, seconds, laps} = this.state;
+    const {running, seconds, duration} = this.state;
 
     return (
       <div className="stopwatch">
@@ -45,13 +45,13 @@ class Timer extends React.Component {
         )}
 
         {(running || seconds > 0 
-          ? <Button onClick={this.handleLapClick.bind(this)}>Lap</Button>
+          ? <Button onClick={this.handleLapClick.bind(this)}>Record</Button>
           : null
         )}
 
         <ul className="stopwatch-laps">
-          {laps.map((lap, i) =>
-            <li className="stopwatch-lap"><strong>{i + 1}</strong>/ {formattedSeconds(lap)}</li>)
+          {duration.map((record, i) =>
+            <li className="stopwatch-lap"><strong>{i + 1}</strong>/ {formattedSeconds(record)}</li>)
           }
         </ul>
       </div>
